@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — CareWell Clinic</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1 class="logo">CareWell Admin</h1>
+      <p class="tag">Manage doctors and appointments</p>
+    </header>
+
+    <section class="card">
+      <h2>Admin Access</h2>
+      <label>
+        Admin token
+        <input id="admin-token" type="password" placeholder="enter admin token (default: admin123)" />
+      </label>
+      <div class="actions" style="margin-top:8px;">
+        <button id="btn-load" class="btn primary">Load data</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Doctors</h3>
+      <form id="doctor-form">
+        <div class="row">
+          <label>
+            Name
+            <input id="doc-name" required />
+          </label>
+          <label>
+            Specialization
+            <input id="doc-spec" required />
+          </label>
+        </div>
+        <div class="actions">
+          <button class="btn primary" type="submit">Add / Update</button>
+          <button id="doc-clear" class="btn ghost" type="button">Clear</button>
+        </div>
+      </form>
+      <div id="doctors-list" style="margin-top:12px;"></div>
+    </section>
+
+    <section class="card">
+      <h3>Appointments</h3>
+      <div id="admin-appointments"></div>
+    </section>
+
+    <div id="toast" class="toast hidden"></div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

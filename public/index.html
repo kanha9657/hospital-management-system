@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hospital Appointments</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1 class="logo">CareWell Clinic</h1>
+        <p class="tag">Book appointments quickly. Quality care, with a smile.</p>
+      </header>
+
+      <section class="card form-card">
+        <h2>Book an Appointment</h2>
+        <form id="appointment-form">
+          <div class="row">
+            <label>
+              Full name
+              <input type="text" name="name" id="name" placeholder="e.g. Jane Doe" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" id="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Phone
+              <input type="tel" name="phone" id="phone" placeholder="+1 555 555 555" required />
+            </label>
+            <label>
+              Disease / Concern
+              <select id="disease" required>
+                <option value="">Select a concern</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Preferred Doctor
+              <select id="doctor">
+                <option value="">Any available</option>
+              </select>
+            </label>
+            <label>
+              Date & time
+              <input type="datetime-local" id="appointment_date" required />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" type="submit">Book Appointment</button>
+            <button class="btn ghost" type="button" id="view-appointments">View Recent</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card appointments" id="appointments-list" aria-live="polite">
+        <h3>Recent Appointments</h3>
+        <div id="appointments"></div>
+      </section>
+
+      <div id="toast" class="toast hidden"></div>
+
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
